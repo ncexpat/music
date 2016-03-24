@@ -1,0 +1,92 @@
+= Network analysis with Neo4j
+:neo4j-version: 2.1.0
+:tags: domain:education, use-case:network analysis
+
+
+
+
+
+//graph
+
+=== MY DATASET
+[source, cypher]
+----
+CREATE
+//People
+(a:Person{name:'Gram Parsons'}),
+(b:Person{name:'Chris Hillman'}),
+(c:Person{name:'Jon Corneal'}),
+(j:Person{name:'Pete Kleinow'}),
+(l:Person{name:'Keith Richards'}),
+(n:Person{name:'EmmyLou Harris'}),
+(p:Person{name:'Chris Ethridge'}),
+(q:Person{name:'Clarence White'}),
+(s:Person{name:'Gene Parsons'}),
+(u:Person{name:'Gene Clark'}),
+(v:Person{name:'Doug Dillard'}),
+(y:Person{name:'Herb Pedersen'}),
+(z:Person{name:'Bernie Leadon'}),
+(bb:Person{name:'Michael Clarke'}),
+
+
+//Bands
+(d:Group{name:'Byrds'}),
+(e:Group{name:'Flying Burrito Brothers'}),
+(f:Group{name:'International Submarine Band'}),
+(k:Group{name:'Desert Rose Band'}),
+(m:Group{name:'Rolling Stones'}),
+(o:Group{name:'Fallen Angels'}),
+(r:Group{name:'Kentucky Colonels'}),
+(t:Group{name:'Nashville West'}),
+(w:Group{name:'Dillard & Clark'}),
+(x:Group{name:'The Dillards'}),
+(aa:Group{name:'The Eagles'}),
+
+//Relationships
+(a)-[:PLAYED]->(d),
+(a)-[:PLAYED]->(e),
+(a)-[:PLAYED]->(f),
+(b)-[:PLAYED]->(d),
+(a)-[:PLAYED]->(e),
+(c)-[:PLAYED]->(f),
+(j)-[:PLAYED]->(e),
+(b)-[:PLAYED]->(e),
+(b)-[:PLAYED]->(k),
+(a)-[:HUNG_OUT_WITH]->(l),
+(l)-[:PLAYED]->(m),
+(a)-[:PLAYED]->(o),
+(n)-[:PLAYED]->(o),
+(p)-[:PLAYED]->(f),
+(p)-[:PLAYED]->(e),
+(q)-[:PLAYED]->(d),
+(q)-[:PLAYED]->(r),
+(s)-[:PLAYED]->(d),
+(s)-[:PLAYED]->(e),
+(s)-[:PLAYED]->(t),
+(q)-[:PLAYED]->(t),
+(u)-[:PLAYED]->(d),
+(b)-[:BACKED]->(w),
+(j)-[:BACKED]->(w),
+(u)-[:PLAYED]->(w),
+(v)-[:PLAYED]->(w),
+(y)-[:PLAYED]->(x),
+(v)-[:PLAYED]->(x),
+(y)-[:PLAYED]->(k),
+(z)-[:PLAYED]->(e),
+(z)-[:BACKED]->(w),
+(z)-[:FOUNDED]->(aa),
+(bb)-[:BACKED]->(w),
+(bb)-[:BACKED]->(e),
+(bb)-[:BACKED]->(d)
+
+
+
+
+
+----
+
+
+
+
+
+
